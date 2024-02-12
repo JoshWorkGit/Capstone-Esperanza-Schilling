@@ -26,19 +26,23 @@ function Cart() {
   }
 
   console.log("Reaching return statement");
-  // console.log("Data object " + dataObj[0].price);
+
+  // console.log(typeof dataObj[0].price);
   return (
     <div>
       <h1>Please confim price and checkout</h1>
       {dataObj &&
         Object.keys(dataObj).map((value, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="shoppingCard">
               {console.log("Value " + dataObj[value].BookTitle)}
               <div>
-                This is the Book: {dataObj[value].BookTitle}
-                <br></br>
-                The value is: {dataObj[value].price}
+                {/* <img src="https://placehold.co/600x400"></img> */}
+                <div className="shoppingCardInner">
+                  {dataObj[value].BookTitle}
+                  <br></br>
+                  {parseFloat(dataObj[value].price).toFixed(2)}
+                </div>
               </div>
             </div>
           );
@@ -65,7 +69,7 @@ function Cart() {
           window.location.reload();
         }}
       >
-        Purchase for total price of ${total_price}
+        Purchase for total price of ${parseFloat(total_price).toFixed(2)}
       </button>
     </div>
     // <div>

@@ -27,6 +27,8 @@ function ProductDetails() {
     fetchData();
   }, []);
   const ratingBar = book.popularity / 2;
+  const roundedNumber = parseFloat(book.price).toFixed(2);
+
   return (
     <div>
       <h2>Find More information on your book . . .</h2>
@@ -46,7 +48,7 @@ function ProductDetails() {
         precision={0.5}
         readOnly
       />
-      <p>Price: {book.price}</p>
+      <p>Price: {roundedNumber}</p>
       <p>Category: {book.category}</p>
 
       <button

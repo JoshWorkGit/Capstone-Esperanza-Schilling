@@ -11,11 +11,11 @@ from sklearn.neighbors import NearestNeighbors
 import pandas as pd
 
 
-popularity_arg = sys.argv[1]
-price_arg = sys.argv[2]
+# popularity_arg = sys.argv[1]
+# price_arg = sys.argv[2]
 
-print('Popularity is: ' + popularity_arg)
-print('Price is: ' + price_arg)
+# print('Popularity is: ' + popularity_arg)
+# print('Price is: ' + price_arg)
 
 
 # books = pd.read_csv(r'..\assets\books.csv') #dtype={'ISBN': 'int32', 'Book-Title': 'str'}

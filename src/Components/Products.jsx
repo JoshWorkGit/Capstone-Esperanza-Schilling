@@ -188,15 +188,18 @@ function Products() {
   const [pagelimit, setpageLimit] = useState(10);
 
   //Filter Retrieved by Search Bar
-  const ListRealItems = book.filter((item) => {
-    return search.toLowerCase() === ""
-      ? item
-      : item.BookTitle.toLowerCase().includes(search) ||
-          item.BookAuthor.toLowerCase().includes(search) ||
-          item.category.toLowerCase().includes(search)
-  }).map((item, index) => {
+  const ListRealItems = book
+    .filter((item) => {
+      return search.toLowerCase() === ""
+        ? item
+        : item.BookTitle.toLowerCase().includes(search) ||
+            item.BookAuthor.toLowerCase().includes(search) ||
+            item.category.toLowerCase().includes(search);
+    })
+    .map((item, index) => {
       //{item.BookTitle.length >20? item>BookTitle.slice(0, 20) + "..." : item.BookTitle }
-      const title = item.BookTitle.slice(0,20)+ "..."
+      const title = item.BookTitle.slice(0, 20) + "...";
+      const roundedNumber = item.price.toFixed(2);
       return (
         <li key={index}>
           <h3>
@@ -212,7 +215,7 @@ function Products() {
               />
             </Link>
             <br />
-            {item.price}
+            {roundedNumber}
           </h3>
         </li>
       );
